@@ -1,0 +1,169 @@
+Website database design:-------
+
+
+WebsiteSetting
+	-company_logo
+	-company_name
+	-company_slogan
+	-company_description
+	-company_address
+	-phone
+	-support_phone
+	-email
+	-copyright_text
+	-facebook_url
+	-twitter_url
+	-youtube_url
+	-instagram_url
+	-android_app_url
+	-meta_title
+	-meta_description
+	-meta_keywords
+	
+
+Slider
+	-image
+	-title
+	-details
+	-button_text
+	-link
+	-status
+	
+	
+PaymentMethod
+	-image
+	-name
+	-status
+	
+	
+Testimonial
+	-image
+	-name
+	-service_id
+	-comment
+	-status
+	
+	
+Service
+	-name
+	-slug
+	-description
+	-image
+	-hour_rate
+	-details
+	-status
+	-meta_title
+	-meta_description
+	-meta_keywords
+	
+	
+Faq
+	-question
+	-answer
+	-status
+	
+	
+CallToAction
+	-headline
+	-button_text
+	-link
+	
+	
+Contact
+	-address
+	-email
+	-support_email
+	-phone
+	-support_phone
+	-details
+	
+	
+Message
+	-name
+	-email
+	-phone
+	-message
+	
+	
+WhyChooseMe
+	-title
+	-short_description
+	-details
+	
+	
+About
+	-title
+	-subtitle
+	-description
+	-image
+	-extra_details
+	-meta_title
+	-meta_description
+	-meta_keywords
+	
+	
+Appointment
+	-name
+	-email
+	-phone
+	-date
+	-time
+	-message
+	
+	
+AppointmentTime
+	-time
+	-status
+	
+	
+MailConfiguration
+	-mail_mailer
+	-mail_host
+	-mail_port
+	-mail_username
+	-mail_password
+	-mail_encryption
+	-mail_address
+	-mail_from_name
+	
+	
+User
+	-name
+	-email
+	-phone
+	-password
+	-address
+	-status
+	
+	
+Invoice
+	-client_id
+	-invoice_code
+	-date
+	-service
+	-hour_rate
+	-total_hour
+	-total_amount
+	-status (pending, paid, cancelled)
+	
+	
+Payments
+	-invoice_id
+	-transaction_id
+	-amount_paid
+	-payment_date
+	-payment_status (success, failed, pending)
+	-payment_method
+	-
+	-
+	
+	
+Page
+	-title
+	-slug
+	-content
+	-location
+	-status
+	-meta_title
+	-meta_description
+	-meta_keywords
