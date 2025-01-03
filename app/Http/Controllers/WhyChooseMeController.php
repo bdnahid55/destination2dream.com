@@ -10,8 +10,8 @@ class WhyChooseMeController extends Controller
 
     public function WhyChooseUsEditData(WhyChooseMe $WhyChooseMe)
     {
-        $WhyChooseMeData = WhyChooseMe::first();
-        return view('back-end.pages.why_choose_us.why_choose_us', compact('WhyChooseMeData'));
+        $WhyChooseUsData = WhyChooseMe::first();
+        return view('back-end.pages.why_choose_us.why_choose_us', compact('WhyChooseUsData'));
     }
 
     // update data

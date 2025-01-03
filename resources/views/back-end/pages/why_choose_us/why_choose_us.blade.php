@@ -9,7 +9,7 @@
                     <h5 class="mb-0 card-title">Update Why Choose Us </h5>
                 </div>
                 <div class="card-body">
-                    <form id="loginForm" action="{{ route('admin.why_choose_us.update', $WhyChooseMeData->id) }}"
+                    <form id="loginForm" action="{{ route('admin.why_choose_us.update', $WhyChooseUsData->id) }}"
                         method="post" enctype="multipart/form-data">
                         @csrf
 
@@ -18,7 +18,7 @@
                             <div class="col-lg-6">
                                 <div class="mb-4 form-group">
                                     <label for="title">Title</label>
-                                    <input type="text" name="title" value="{{ $WhyChooseMeData->title }}"
+                                    <input type="text" name="title" value="{{ $WhyChooseUsData->title }}"
                                         class="form-control" placeholder="Ex: WHY ME?" required>
                                     @error('title')
                                         <span class="text-danger">{{ $message }}</span>
@@ -30,7 +30,7 @@
                                 <div class="mb-4 form-group">
                                     <label for="short_description">Introductory Paragraph</label>
                                     <textarea class="form-control" rows="5" name="short_description"
-                                        placeholder="What makes you or your services stand out and why trust or choose you?" required>{{ $WhyChooseMeData->short_description }}</textarea>
+                                        placeholder="What makes you or your services stand out and why trust or choose you?" required>{{ $WhyChooseUsData->short_description }}</textarea>
                                     @error('short_description')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -41,7 +41,7 @@
                                 <div class="mb-4 form-group">
                                     <label for="details">Detailed with Explanation</label>
                                     <textarea class="details form-control" name="details"
-                                        placeholder="What qualities, values, or benefits do you want to highlight about your services?">{{ $WhyChooseMeData->details }}</textarea>
+                                        placeholder="What qualities, values, or benefits do you want to highlight about your services?">{{ $WhyChooseUsData->details }}</textarea>
                                     @error('details')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

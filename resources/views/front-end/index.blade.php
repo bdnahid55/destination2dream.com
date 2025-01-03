@@ -123,13 +123,13 @@
                 <div class="row content">
                     <div class="col-lg-6 center-section" data-aos="fade-right">
                         <div class="center-line">
-                            <h2>{{ $WhyChooseMeData->title }}</h2>
-                            <h3>{{ $WhyChooseMeData->short_description }}</h3>
+                            <h3>{{ $WhyChooseUsData->title }}</h3>
+                            <h5>{{ $WhyChooseUsData->short_description }}</h5>
                         </div>
 
                     </div>
                     <div class="pt-4 col-lg-6 pt-lg-0 whychooseme" data-aos="fade-left">
-                        {!! $WhyChooseMeData->details !!}
+                        {!! $WhyChooseUsData->details !!}
                     </div>
                     <style>
                         .whychooseme li {

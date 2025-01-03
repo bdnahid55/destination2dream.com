@@ -38,14 +38,14 @@ class HomepageController extends Controller
             ->orderBy('id', 'ASC')
             ->get();
 
-        $WhyChooseMeData = WhyChooseMe::first();
+        $WhyChooseUsData = WhyChooseMe::first();
 
         $CallToActionData = CallToAction::first();
 
         $AboutData = About::first();
 
         $SeoData = WebsiteSetting::first();
-        return view('front-end.index', compact('SeoData', 'AllSlider', 'AboutData', 'ServiceData', 'OurTeamData', 'PaymentMethod', 'WhyChooseMeData', 'CallToActionData'));
+        return view('front-end.index', compact('SeoData', 'AllSlider', 'AboutData', 'ServiceData', 'OurTeamData', 'PaymentMethod', 'WhyChooseUsData', 'CallToActionData'));
     }
 
 
