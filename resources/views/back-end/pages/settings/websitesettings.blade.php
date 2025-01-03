@@ -62,8 +62,7 @@
                             <div class="col-md-6">
                                 <div class="mb-4 form-group">
                                     <label for="company_address" class="col-form-label">Company Address</label>
-                                    <input type="text" name="company_address"
-                                        value="{{ $WebsiteSettingsData->company_address }}" class="form-control" required>
+                                    <textarea class="form-control" name="company_address">{{ $WebsiteSettingsData->company_address }}</textarea>
                                     @error('company_address')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -245,6 +244,7 @@
     @if (Session::has('message'))
         <script>
             $(document).ready(function() {
+
                 var type = "{{ Session::get('alert-type', 'info') }}"; // Get alert type
                 var message = "{{ Session::get('message') }}"; // Get message
 

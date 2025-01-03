@@ -114,8 +114,9 @@
                         <h3>{{ $WebsiteSettingData->company_name }}</h3>
                         <i class="slogan">{{ $WebsiteSettingData->company_slogan }}</i>
                         <p>
-                            {{ $WebsiteSettingData->company_address }}<br><br>
+                            {!! $WebsiteSettingData->company_address !!}<br><br>
                             <strong>Phone:</strong> {{ $WebsiteSettingData->phone }}<br>
+                            <strong>Phone:</strong> {{ $WebsiteSettingData->support_phone }}<br>
                             <strong>Email:</strong> {{ $WebsiteSettingData->email }}<br>
                         </p>
                     </div>
@@ -139,6 +140,9 @@
                     <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Explore More</h4>
                         <ul>
+                            <li><i class="bx bx-chevron-right"></i><a href="{{ route('service') }}">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i><a href="">Country</a></li>
+                            <li><i class="bx bx-chevron-right"></i><a href="{{ route('contact') }}">Contact</a></li>
                             @php
                                 $ExploreMoreData = App\Models\Page::where('location', 'footer2')->get();
                             @endphp
@@ -154,7 +158,7 @@
             </div>
         </div>
 
-        <div class="container py-4 d-md-flex">
+        <div class="container py-2 d-md-flex">
 
             <div class="text-center me-md-auto text-md-start">
                 <div class="copyright">
