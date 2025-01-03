@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 class WhyChooseMeController extends Controller
 {
 
-    public function WhyChooseMeEditData(WhyChooseMe $WhyChooseMe)
+    public function WhyChooseUsEditData(WhyChooseMe $WhyChooseMe)
     {
         $WhyChooseMeData = WhyChooseMe::first();
-        return view('back-end.pages.why_choose_me.why_choose_me', compact('WhyChooseMeData'));
+        return view('back-end.pages.why_choose_us.why_choose_us', compact('WhyChooseMeData'));
     }
 
     // update data
-    public function WhyChooseMeUpdate(Request $request)
+    public function WhyChooseUsUpdate(Request $request)
     {
 
         $check_valid = $request->validate([

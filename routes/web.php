@@ -68,9 +68,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('about', [AboutController::class, 'AboutEditData'])->name('about');
     Route::post('about_update', [AboutController::class, 'AboutUpdate'])->name('about.update');
 
-    //  Why Choose Me 
-    Route::get('why_choose_me', [WhyChooseMeController::class, 'WhyChooseMeEditData'])->name('why_choose_me');
-    Route::post('why_choose_me_update', [WhyChooseMeController::class, 'WhyChooseMeUpdate'])->name('why_choose_me.update');
+    //  Why Choose Us 
+    Route::get('why_choose_us', [WhyChooseMeController::class, 'WhyChooseUsEditData'])->name('why_choose_us');
+    Route::post('why_choose_us_update', [WhyChooseMeController::class, 'WhyChooseUsUpdate'])->name('why_choose_us.update');
 
     //  Call To Action
     Route::get('call_to_action', [CallToActionController::class, 'CallToActionEditData'])->name('call_to_action');

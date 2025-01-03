@@ -1,15 +1,15 @@
 @extends('back-end.layout.master')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Update Why Choose Me')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Update Why Choose Us')
 @section('content')
 
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0 card-title">Update Why Choose Me </h5>
+                    <h5 class="mb-0 card-title">Update Why Choose Us </h5>
                 </div>
                 <div class="card-body">
-                    <form id="loginForm" action="{{ route('admin.why_choose_me.update', $WhyChooseMeData->id) }}"
+                    <form id="loginForm" action="{{ route('admin.why_choose_us.update', $WhyChooseMeData->id) }}"
                         method="post" enctype="multipart/form-data">
                         @csrf
 

@@ -115,10 +115,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.why_choose_me') }}"
-                                class="nav-link {{ request()->routeIs('admin.why_choose_me') ? 'active' : '' }}"><i
+                            <a href="{{ route('admin.why_choose_us') }}"
+                                class="nav-link {{ request()->routeIs('admin.why_choose_us') ? 'active' : '' }}"><i
                                     class="nav-icon fas fa-th"></i>
-                                <p>Why Choose Me</p>
+                                <p>Why Choose Us</p>
                             </a>
                         </li>
 

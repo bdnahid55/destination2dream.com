@@ -48,7 +48,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>About ME</h2>
+                    <h2>About Us</h2>
                 </div>
 
                 <div class="row content">
@@ -117,7 +117,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Why Choose ME</h2>
+                    <h2>Why Choose Us</h2>
                 </div>
 
                 <div class="row content">
@@ -156,28 +156,28 @@
             </div>
         </section><!-- End Why Choose Me Section -->
 
-        <!-- ======= Testimonials Section ======= -->
+        <!-- ======= Our Team Section ======= -->
         <section id="testimonials" class="testimonials section-bg">
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Clients Testimonials</h2>
+                    <h2>Our Team</h2>
                 </div>
 
                 <div class="row">
 
-                    @if ($TestimonialData->isNotEmpty())
-                        @foreach ($TestimonialData as $index => $testimonial)
+                    @if ($OurTeamData->isNotEmpty())
+                        @foreach ($OurTeamData as $index => $ourteam)
                             <div class="col-lg-6" data-aos="fade-up">
                                 <div class="mt-4 testimonial-item">
                                     <img class="testimonial-img"
-                                        src="/uploads/testimonial/{{ !empty($testimonial->image) ? $testimonial->image : 'testimonial.jpg' }}"
-                                        alt="{{ $testimonial->name }}">
-                                    <h3>{{ $testimonial->name }}</h3>
+                                        src="/uploads/our_team/{{ !empty($ourteam->image) ? $ourteam->image : 'testimonial.jpg' }}"
+                                        alt="{{ $ourteam->name }}">
+                                    <h3>{{ $ourteam->name }}</h3>
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
 
-                                        {{ \Illuminate\Support\Str::limit($testimonial->comment, 190, '...') }}
+                                        {{ \Illuminate\Support\Str::limit($ourteam->designation, 190, '...') }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>

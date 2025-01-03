@@ -8,7 +8,7 @@ use App\Models\Slider;
 use App\Models\Contact;
 use App\Models\Service;
 use App\Models\Portfolio;
-use App\Models\Testimonial;
+use App\Models\OurTeam;
 use App\Models\WhyChooseMe;
 use App\Models\CallToAction;
 use Illuminate\Http\Request;
@@ -34,7 +34,7 @@ class HomepageController extends Controller
             ->orderBy('id', 'ASC')
             ->get();
 
-        $TestimonialData = Testimonial::where('status', 'active')
+        $OurTeamData = OurTeam::where('status', 'active')
             ->orderBy('id', 'ASC')
             ->get();
 
@@ -45,7 +45,7 @@ class HomepageController extends Controller
         $AboutData = About::first();
 
         $SeoData = WebsiteSetting::first();
-        return view('front-end.index', compact('SeoData', 'AllSlider', 'AboutData', 'ServiceData', 'TestimonialData', 'PaymentMethod', 'WhyChooseMeData', 'CallToActionData'));
+        return view('front-end.index', compact('SeoData', 'AllSlider', 'AboutData', 'ServiceData', 'OurTeamData', 'PaymentMethod', 'WhyChooseMeData', 'CallToActionData'));
     }
 
 
