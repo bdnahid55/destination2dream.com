@@ -41,7 +41,7 @@
 
                                 <!-- Mobile No -->
                                 <div class="mb-3">
-                                    <label for="mobile" class="form-label">Mobile No</label>
+                                    <label for="mobile" class="form-label">Mobile</label>
                                     <input type="tel" class="form-control" id="mobile" required>
                                 </div>
 

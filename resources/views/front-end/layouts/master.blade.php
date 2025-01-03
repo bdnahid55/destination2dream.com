@@ -83,14 +83,14 @@
             </nav><!-- .navbar -->
 
             <div class="header-social-links d-flex">
-                <a href="{{ $WebsiteSettingData->twitter_url }}" target=”_blank” class="twitter"><i
-                        class="bu bi-twitter"></i></a>
+                {{-- <a href="{{ $WebsiteSettingData->twitter_url }}" target=”_blank” class="twitter"><i
+                        class="bu bi-twitter"></i></a> --}}
                 <a href="{{ $WebsiteSettingData->facebook_url }}" target=”_blank” class="facebook"><i
                         class="bu bi-facebook"></i></a>
                 <a href="{{ $WebsiteSettingData->instagram_url }}" target=”_blank” class="instagram"><i
                         class="bu bi-instagram"></i></a>
                 <a href="{{ $WebsiteSettingData->youtube_url }}" target=”_blank” class="youtube"><i
-                        class="bu bi-youtube"></i></i></a>
+                        class="bu bi-youtube"></i></a>
             </div>
 
         </div>
@@ -112,8 +112,8 @@
 
                     <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>{{ $WebsiteSettingData->company_name }}</h3>
+                        <i class="slogan">{{ $WebsiteSettingData->company_slogan }}</i>
                         <p>
-                            {{ $WebsiteSettingData->company_slogan }} <br>
                             {{ $WebsiteSettingData->company_address }}<br><br>
                             <strong>Phone:</strong> {{ $WebsiteSettingData->phone }}<br>
                             <strong>Email:</strong> {{ $WebsiteSettingData->email }}<br>
@@ -162,8 +162,8 @@
                 </div>
             </div>
             <div class="pt-3 text-center social-links text-md-right pt-md-0">
-                <a href="{{ $WebsiteSettingData->twitter_url }}" target=”_blank” class="twitter"><i
-                        class="bx bxl-twitter"></i></a>
+                {{-- <a href="{{ $WebsiteSettingData->twitter_url }}" target=”_blank” class="twitter"><i
+                        class="bx bxl-twitter"></i></a> --}}
                 <a href="{{ $WebsiteSettingData->facebook_url }}" target=”_blank” class="facebook"><i
                         class="bx bxl-facebook"></i></a>
                 <a href="{{ $WebsiteSettingData->instagram_url }}" target=”_blank” class="instagram"><i

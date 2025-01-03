@@ -55,17 +55,6 @@
 
                                     <div class="col-lg-6">
                                         <div class="mb-4 form-group">
-                                            <label for="hour_rate">Service Hour Rate</label>
-                                            <input class="form-control" type="text" name="hour_rate"
-                                                placeholder="Service Hour Rate" required>
-                                            @error('hour_rate')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="mb-4 form-group">
                                             <label for="exampleInputImage">Image</label>
                                             <input class="form-control" type="file" name="image">
                                             @error('image')
@@ -219,11 +208,6 @@
                         name: 'name'
                     },
                     {
-                        title: 'Hour Rate',
-                        data: 'hour_rate',
-                        name: 'hour_rate'
-                    },
-                    {
                         title: 'Image',
                         data: 'image',
                         name: 'image'
@@ -296,7 +280,6 @@
                         ,
                     success: function(responseText) {
                         $('input[name^="name"]').val(responseText.data.name);
-                        $('input[name^="hour_rate"]').val(responseText.data.hour_rate);
                         $('textarea[name^="description"]').val(responseText.data.description);
                         $('select[name^="status"]').val(responseText.data.status);
                         $('input[name^="meta_title"]').val(responseText.data.meta_title);

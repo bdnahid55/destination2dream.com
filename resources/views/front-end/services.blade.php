@@ -41,7 +41,6 @@
                                             href="{{ URL::to('service') }}/{{ $service->slug }}/{{ $service->id }}">{{ $service->name }}</a>
                                     </h3>
                                     <p>{{ \Illuminate\Support\Str::limit($service->description, 175, '...') }}</p>
-                                    <h4> {{ $service->hour_rate }}€ / hour </h4>
                                 </div>
                             </div>
                         @endforeach

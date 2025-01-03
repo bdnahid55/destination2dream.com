@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->decimal('hour_rate', 8, 2)->nullable();
             $table->text('details')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();

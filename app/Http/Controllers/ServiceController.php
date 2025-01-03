@@ -61,7 +61,6 @@ class ServiceController extends Controller
             $request->validate(array(  // All column field will change
                 'name' => 'required|min:2',
                 'description' => 'required|min:2',
-                'hour_rate' => 'required|numeric',
                 'details' => 'required|min:3',
                 'meta_title' => 'required|min:2',
                 'meta_description' => 'required|min:1',
@@ -121,7 +120,6 @@ class ServiceController extends Controller
             $query->name = $request->name;
             $query->slug = Str::slug($request->name);
             $query->description = $request->description;
-            $query->hour_rate = $request->hour_rate;
             $query->details = $request->details;
             $query->meta_title = $request->meta_title;
             $query->meta_description = $request->meta_description;

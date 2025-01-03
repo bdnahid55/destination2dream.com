@@ -2090,7 +2090,7 @@ section {
 
 #footer .footer-top .footer-contact h3 {
   font-size: 22px;
-  margin: 0 0 10px 0;
+  margin: 0;
   padding: 2px 0 2px 0;
   line-height: 1;
   font-weight: 500;
@@ -2102,6 +2102,7 @@ section {
 #footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
+  margin-top: 10px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
   color: rgba(255, 255, 255, 0.7);

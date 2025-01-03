@@ -14,7 +14,6 @@ class Service extends Model
         'slug',
         'description',
         'image',
-        'hour_rate',
         'details',
         'status',
         'meta_title',
