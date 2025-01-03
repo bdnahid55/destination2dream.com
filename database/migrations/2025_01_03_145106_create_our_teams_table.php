@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testimonials', function (Blueprint $table) {
+        Schema::create('our_teams', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->integer('service_id')->nullable();
             $table->string('image')->nullable();
-            $table->text('comment')->nullable();
+            $table->text('designation')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('testimonials');
+        Schema::dropIfExists('our_teams');
     }
 };

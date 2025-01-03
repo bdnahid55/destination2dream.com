@@ -13,7 +13,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AdminAuthController;
-use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\WhyChooseMeController;
 use App\Http\Controllers\CallToActionController;
 use App\Http\Controllers\PaymentMethodController;
@@ -94,11 +94,11 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('faq_edit_data', [FaqController::class, 'FaqEditData'])->name('faq.edit');
     Route::post('faq_insert', [FaqController::class, 'FaqInsert'])->name('faq.insert');
 
-    // Testimonial crud
-    Route::get('testimonial', [TestimonialController::class, 'Testimonial'])->name('testimonial');
-    Route::get('testimonial_data', [TestimonialController::class, 'TestimonialData'])->name('testimonial.data');
-    Route::get('testimonial_edit_data', [TestimonialController::class, 'TestimonialEditData'])->name('testimonial.edit');
-    Route::post('testimonial_insert', [TestimonialController::class, 'TestimonialInsert'])->name('testimonial.insert');
+    // OurTeam crud 
+    Route::get('our_team', [OurTeamController::class, 'OurTeam'])->name('our_team');
+    Route::get('our_team_data', [OurTeamController::class, 'OurTeamData'])->name('our_team.data');
+    Route::get('our_team_edit_data', [OurTeamController::class, 'OurTeamEditData'])->name('our_team.edit');
+    Route::post('our_team_insert', [OurTeamController::class, 'OurTeamInsert'])->name('our_team.insert');
 
     // Payment Method crud 
     Route::get('payment_method', [PaymentMethodController::class, 'PaymentMethod'])->name('payment_method');

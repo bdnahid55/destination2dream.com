@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
-use App\Models\Testimonial;
-use Illuminate\Support\Str;
+use App\Models\OurTeam;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
@@ -16,22 +15,18 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Drivers\Gd\Driver;
 
-class TestimonialController extends Controller
+class OurTeamController extends Controller
 {
 
 
-
-    public function Testimonial()
+    public function OurTeam()
     {
-        $ServiceData = Service::where('status', 'active')
-            ->orderBy('id', 'ASC')
-            ->get();
-        return view('back-end.pages.testimonial.testimonial', compact('ServiceData'));
+        return view('back-end.pages.our_team.our_team');
     }
 
-    public function TestimonialEditData(Request $request)
+    public function OurTeamEditData(Request $request)
     {
-        $query = Testimonial::find($request->id); // Model will change
+        $query = OurTeam::find($request->id); // Model will change
         if (!$query) {
             return response()->json([
                 'status' => "error",
@@ -46,42 +41,41 @@ class TestimonialController extends Controller
         ]);
     }
 
-    public function TestimonialInsert(Request $request)
+    public function OurTeamInsert(Request $request)
     {
 
         if ($request->has('delete')) {
-            $query = Testimonial::find($request->delete); // Model will change
+            $query = OurTeam::find($request->delete); // Model will change
 
             if ($query->image != null) {
-                unlink(public_path('uploads/testimonial/' . $query->image)); // image directory name will change
+                unlink(public_path('uploads/our_team/' . $query->image)); // image directory name will change
             }
 
             $query->delete();
 
-            $message = 'Testimonial Deleted Successfully!'; // message will change
+            $message = 'Our Team Deleted Successfully!'; // message will change
         } else {
 
             $id = $request->id ?? null; // If updating, get the ID, otherwise null
             $request->validate(array(  // All column field will change
                 'name' => 'required|min:2',
-                'service_id' => 'required|min:1',
-                'comment' => 'required|min:1',
+                'designation' => 'required|min:1',
                 // 'image' => $id ? 'nullable' : 'required', // Required if creating, nullable if updating
                 'status' => 'required|in:active,inactive',
             ));
 
-            $message = 'Testimonial Create Successfully!'; // Message will change
+            $message = 'Our Team Create Successfully!'; // Message will change
 
             if ($request->has('id')) {
-                $query = Testimonial::find($request->id);  // Model name will change
+                $query = OurTeam::find($request->id);  // Model name will change
 
                 if ($request->hasFile('image')) {
                     if ($query->image != null) {
-                        unlink(public_path('uploads/testimonial/' . $query->image)); // Directory name will change
+                        unlink(public_path('uploads/our_team/' . $query->image)); // Directory name will change
                     }
                 }
 
-                $message = 'Testimonial Updated Successfully!'; // Message will change
+                $message = 'Our Team Updated Successfully!'; // Message will change
 
                 if (!$query) {
                     return response()->json([
@@ -90,7 +84,7 @@ class TestimonialController extends Controller
                     ], 422);
                 }
             } else {
-                $query = new Testimonial;  // Model name will change
+                $query = new OurTeam;  // Model name will change
             }
 
             if ($request->hasFile('image')) {
@@ -101,7 +95,7 @@ class TestimonialController extends Controller
                 $filename           = Str::uuid() . Str::random(5) . '.' . $extension;
                 $img                = $manager->read($file);
                 $img                = $img->resize(128, 128);
-                $destinationPath    = public_path('uploads/testimonial/');  // Directory name will change
+                $destinationPath    = public_path('uploads/our_team/');  // Directory name will change
                 $img->save($destinationPath . $filename);
                 $query->image       = $filename;
 
@@ -110,7 +104,7 @@ class TestimonialController extends Controller
                 // $image_name        = Str::uuid() . Str::random(5);
                 // $ext               = Str::lower($request->file('image')->getClientOriginalExtension());
                 // $image_full_name   = $image_name.'.'.$ext;
-                // $upload_path       = "uploads/testimonial/";  // Directory name will change
+                // $upload_path       = "uploads/our_team/";  // Directory name will change
                 // $image_url         = $upload_path.$image_full_name;
                 // $success           = $request->file('image')->move($upload_path,$image_full_name);
                 // $query->image      = $image_full_name;
@@ -119,8 +113,7 @@ class TestimonialController extends Controller
 
             // All request name will be changed
             $query->name = $request->name;
-            $query->service_id = $request->service_id;
-            $query->comment = $request->comment;
+            $query->designation = $request->designation;
             $query->status = $request->status;
             $query->save();
         }
@@ -130,21 +123,18 @@ class TestimonialController extends Controller
         ]);
     }
 
-    public function TestimonialData(Request $request)
+    public function OurTeamData(Request $request)
     {
-        $Testimonial = Testimonial::with('service')->orderBy('id', 'desc')->get(); // Model & Variable will change
+        $OurTeam = OurTeam::orderBy('id', 'desc')->get(); // Model & Variable will change
 
         $this->i = 1;
 
-        return DataTables::of($Testimonial)  // Variable will change
+        return DataTables::of($OurTeam)  // Variable will change
             ->addColumn('id', function ($data) {
                 return $this->i++;
             })
-            ->addColumn('service_id', function ($data) {
-                return $data->service ? $data->service->name : '';
-            })
             ->addColumn('image', function ($data) {
-                $url = asset('uploads/testimonial/' . $data->image);   // Directory name will change
+                $url = asset('uploads/our_team/' . $data->image);   // Directory name will change
                 return '<img src="' . $url . '" style="height:80px; width:80px;" alt="Image" class="mx-auto img-fluid d-block"/>';
             })
             ->addColumn('action', function ($data) {

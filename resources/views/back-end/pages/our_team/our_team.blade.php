@@ -1,5 +1,5 @@
 @extends('back-end.layout.master')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Testimonial List')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Team Member List')
 @section('content')
 
     <!-- BEGIN: Page content-->
@@ -8,8 +8,8 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header d-flex">
-                        <h5 class="p-2 mb-0 mr-auto box-title">Testimonial</h5>
-                        <button type="button" class="btn btn-primary btn-sm DataAddButton">Add Testimonial</button>
+                        <h5 class="p-2 mb-0 mr-auto box-title">Our Team</h5>
+                        <button type="button" class="btn btn-primary btn-sm DataAddButton">Add Team Member</button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -27,7 +27,7 @@
     <div class="modal fade" id="DataAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-            <form id="DataAddUpdate" action="{{ route('admin.testimonial.insert') }}" method="post"
+            <form id="DataAddUpdate" action="{{ route('admin.our_team.insert') }}" method="post"
                 enctype="multipart/form-data">
                 <input type="hidden" name="id" id="hidden-id">
                 <div class="modal-content">
@@ -44,25 +44,10 @@
 
                                     <div class="col-lg-6">
                                         <div class="mb-4 form-group">
-                                            <label for="name">Client Name</label>
+                                            <label for="name">Member Name</label>
                                             <input class="form-control" type="text" name="name"
-                                                placeholder="Client Name" required>
+                                                placeholder="Member Name" required>
                                             @error('name')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="mb-4 form-group">
-                                            <label for="service_id">Client Service</label>
-                                            <select class="form-control" name="service_id" required>
-                                                <option value="" selected>Select Service</option>
-                                                @foreach ($ServiceData as $service)
-                                                    <option value="{{ $service->id }}">{{ $service->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            @error('service_id')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -95,9 +80,9 @@
 
                                     <div class="col-lg-12">
                                         <div class="mb-4 form-group">
-                                            <label for="comment">Client Feedback</label>
-                                            <textarea class="form-control" name="comment" placeholder="Client Feedback"></textarea>
-                                            @error('comment')
+                                            <label for="designation">Designation</label>
+                                            <textarea class="form-control" name="designation" placeholder="Designation"></textarea>
+                                            @error('designation')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -127,7 +112,7 @@
 
             $(document).on('click', '.DataAddButton', function() {
                 $('#hidden-id').attr("disabled", "true");
-                $('.modal-title').text('Add Testimonial');
+                $('.modal-title').text('Add Team Member');
                 $("#DataAdd").modal('show');
             });
 
@@ -150,7 +135,7 @@
                 destroy: true,
                 scrollX: true,
                 ajax: {
-                    url: "{{ route('admin.testimonial.data') }}", // URL will change
+                    url: "{{ route('admin.our_team.data') }}", // URL will change
                     type: 'GET',
                     cache: false,
                     data: function(d) {}
@@ -162,14 +147,14 @@
                         name: 'id'
                     },
                     {
-                        title: 'Client Name',
+                        title: 'Member Name',
                         data: 'name',
                         name: 'name'
                     },
                     {
-                        title: 'Service',
-                        data: 'service_id',
-                        name: 'service_id'
+                        title: 'Designation',
+                        data: 'designation',
+                        name: 'designation'
                     },
                     {
                         title: 'Image',
@@ -207,7 +192,7 @@
                             },
                             method: 'POST',
                             dataType: 'json',
-                            url: "{{ route('admin.testimonial.insert') }}" // URL will change
+                            url: "{{ route('admin.our_team.insert') }}" // URL will change
                                 ,
                             success: function(responseText) {
                                 // formSuccess(responseText, statusText, xhr, $form);
@@ -231,7 +216,7 @@
 
             $(document).on('click', '.tableEdit', function() {
                 let Id = $(this).data('id');
-                $('.modal-title').text('Update Testimonial');
+                $('.modal-title').text('Update Team Member');
                 $('#hidden-id').removeAttr("disabled");
                 $('#hidden-id').val(Id);
                 $(this).ajaxSubmit({
@@ -240,12 +225,11 @@
                     },
                     dataType: 'json',
                     method: 'GET',
-                    url: "{{ route('admin.testimonial.edit') }}" // URL will change
+                    url: "{{ route('admin.our_team.edit') }}" // URL will change
                         ,
                     success: function(responseText) {
                         $('input[name^="name"]').val(responseText.data.name);
-                        $('select[name^="service_id"]').val(responseText.data.service_id);
-                        $('textarea[name^="comment"]').val(responseText.data.comment);
+                        $('textarea[name^="designation"]').val(responseText.data.designation);
                         $('select[name^="status"]').val(responseText.data.status);
                         $("#DataAdd").modal('show');
                     }

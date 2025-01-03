@@ -58,13 +58,13 @@
                     </a>
                 </li>
 
-                {{-- Testimonials menu  --}}
+                {{-- Our Team menu  --}}
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.testimonial') }}"
-                        class="nav-link {{ request()->routeIs('admin.testimonial') ? 'active' : '' }}"><i
+                    <a href="{{ route('admin.our_team') }}"
+                        class="nav-link {{ request()->routeIs('admin.our_team') ? 'active' : '' }}"><i
                             class="nav-icon fas fa-th"></i>
-                        <p>Testimonial</p>
+                        <p>Our Team</p>
                     </a>
                 </li>
 
