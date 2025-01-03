@@ -1,4 +1,9 @@
 @extends('front-end.layouts.master')
+
+{{-- @section('title', $metadata->title ?? 'About Us')
+@section('description', $metadata->description ?? 'Default Description')
+@section('keywords', $metadata->keywords ?? 'Default Keywords') --}}
+
 @section('content')
     <main id="main">
 
