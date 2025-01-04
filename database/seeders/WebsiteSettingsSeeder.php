@@ -17,6 +17,7 @@ class WebsiteSettingsSeeder extends Seeder
         // Create default website settings
         WebsiteSetting::create([
             'company_logo' => '',
+            'favicon' => '',
             'company_name' => 'Law Company',
             'company_slogan' => 'Best Law service in Garman',
             'company_description' => 'Best Law service in Garman',
@@ -34,6 +35,5 @@ class WebsiteSettingsSeeder extends Seeder
             'meta_description' => 'Law Company Descriprion',
             'meta_keywords' => 'Law Company, Law,law-company',
         ]);
-
     }
 }

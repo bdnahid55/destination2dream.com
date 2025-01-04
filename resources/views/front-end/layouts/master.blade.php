@@ -10,8 +10,11 @@
     <meta name="keywords" content="@yield('keywords', 'Destination2dream,consultancy,destination 2 dream,visa processing,university admission,scholarships ')">
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    @php
+        $FaviconData = App\Models\WebsiteSetting::first();
+    @endphp
+    <link href="/uploads/favicon/{{ $FaviconData->favicon }}" rel="icon">
+    <link href="/uploads/favicon/{{ $FaviconData->favicon }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link

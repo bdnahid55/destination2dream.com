@@ -47,6 +47,7 @@ class WebsiteSettingController extends Controller
             'meta_description' => 'required|min:3',
             'meta_keywords' => 'required|min:3',
             'company_logo' => 'nullable|max:2048',
+            'favicon' => 'nullable|max:2048',
         ]);
 
         // check if token is valid
@@ -87,6 +88,39 @@ class WebsiteSettingController extends Controller
                 // insert only image in database
                 WebsiteSetting::first()->update([
                     'company_logo' => $filename
+                ]);
+            }
+
+
+            if ($request->hasFile('favicon')) {
+                // delete previous image
+                $query = WebsiteSetting::first();
+                if ($query->favicon != null) {
+                    unlink(public_path('uploads/favicon/' . $query->favicon)); // Directory name will change
+                }
+
+                // image code By using image intervention package
+                $file               = $request->file('favicon');
+                $manager            = new ImageManager(new Driver());
+                $extension          = Str::lower($file->getClientOriginalExtension());
+                $filename           = Str::uuid() . Str::random(5) . '.' . $extension;
+                $img                = $manager->read($file);
+                $img                = $img->resize(24, 24);
+                $destinationPath    = public_path('uploads/favicon/');  // Directory name will change
+                $img->save($destinationPath . $filename);
+
+
+                // image code manually
+                // $image_name        = Str::uuid() . '.' . Str::random(5);
+                // $ext               = Str::lower($request->file('favicon')->getClientOriginalExtension());
+                // $image_full_name   = $image_name.'.'.$ext;
+                // $upload_path       = "uploads/favicon/";  // Directory name will change
+                // $image_url         = $upload_path.$image_full_name;
+                // $success           = $request->file('favicon')->move($upload_path,$image_full_name);
+
+                // insert only image in database
+                WebsiteSetting::first()->update([
+                    'favicon' => $filename
                 ]);
             }
 

@@ -26,15 +26,31 @@
                         </div>
 
                         <div class="row">
+
                             <div class="col-md-6">
                                 <div class="mb-4 form-group">
-                                    <label for="company_logo">Company Logo (Logo Size max: 200x75)</label>
+                                    <label for="company_logo">Company Logo (Logo Size max: 200x100)</label>
                                     <input class="form-control" type="file" name="company_logo">
                                     @error('company_logo')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-4 form-group">
+                                    <label for="favicon">Company favicon (Favicon Size max: 24x24)</label>
+                                    <input class="form-control" type="file" name="favicon">
+                                    @error('favicon')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
                             <div class="col-md-6">
                                 <div class="mb-4 form-group">
                                     <label for="company_name" class="col-form-label">Company Name</label>
@@ -45,9 +61,6 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-4 form-group">
                                     <label for="company_slogan" class="col-form-label">Company Slogan</label>
@@ -59,7 +72,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="mb-4 form-group">
                                     <label for="company_address" class="col-form-label">Company Address</label>
                                     <textarea class="form-control" name="company_address">{{ $WebsiteSettingsData->company_address }}</textarea>
