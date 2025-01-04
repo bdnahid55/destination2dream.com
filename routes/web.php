@@ -32,7 +32,6 @@ Route::controller(AdminAuthController::class)->group(function () {
 });
 
 
-
 // Admin Section
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
 
@@ -127,14 +126,6 @@ Route::post('/message/send', [MessageController::class, 'MessageDataSend'])->nam
 Route::get('/about-us', [HomepageController::class, 'about'])->name('about');
 Route::get('/appointment', [HomepageController::class, 'appointment'])->name('appointment');
 // Route::post('/appointment/book', [MessageController::class, 'AppointmentDataSend'])->name('appointment.book');
-
-
-Route::get('/page', function () {
-    return view('front-end.page');
-});
-
-
-
 
 
 
