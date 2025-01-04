@@ -160,5 +160,5 @@ Route::get('/runs', function () {
     } catch (\Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
     }
-});
-// })->middleware(['admin', 'throttle:5,1']);
+    // });
+})->middleware(['admin', 'throttle:5,1']);
