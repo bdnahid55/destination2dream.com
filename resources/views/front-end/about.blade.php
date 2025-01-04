@@ -1,8 +1,10 @@
 @extends('front-end.layouts.master')
-
-{{-- @section('title', $metadata->title ?? 'About Us')
-@section('description', $metadata->description ?? 'Default Description')
-@section('keywords', $metadata->keywords ?? 'Default Keywords') --}}
+@php
+    $WebsiteSettingData = App\Models\WebsiteSetting::first();
+@endphp
+@section('title', 'About Us' . ' | ' . $WebsiteSettingData->meta_title)
+@section('description', $WebsiteSettingData->meta_description)
+@section('keywords', $WebsiteSettingData->meta_keywords)
 
 @section('content')
     <main id="main">

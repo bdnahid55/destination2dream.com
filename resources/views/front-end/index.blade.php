@@ -1,8 +1,8 @@
 @extends('front-end.layouts.master')
 
-@section('title', $SeoData->meta_title ?? 'Default Title')
-@section('description', $SeoData->meta_description ?? 'Default Description')
-@section('keywords', $SeoData->meta_keywords ?? 'Default Keywords')
+@section('title', $SeoData->meta_title . ' | ' . $SeoData->meta_description)
+@section('description', $SeoData->meta_description)
+@section('keywords', $SeoData->meta_keywords)
 
 @section('content')
     <!-- ======= Hero Section ======= -->

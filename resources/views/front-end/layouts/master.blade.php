@@ -69,14 +69,13 @@
                                 $PageLists = App\Models\Page::where('location', 'menu')->get();
                             @endphp
                             @foreach ($PageLists as $page)
-                                <li><a href="">{{ $page->title }}</a></li>
+                                <li><a href="#">{{ $page->title }}</a></li>
                                 {{-- <li><a
                                         href="{{ URL::to('/') }}/{{ $page->slug }}/{{ $page->id }}">{{ $page->title }}</a>
                                 </li> --}}
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="#">Login </a></li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

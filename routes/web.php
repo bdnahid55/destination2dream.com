@@ -124,15 +124,9 @@ Route::get('/service', [HomepageController::class, 'service'])->name('service');
 Route::get('/service/{slug}/{id}', [ServiceController::class, 'ServiceDetails'])->name('service.details');
 Route::get('/contact', [HomepageController::class, 'contact'])->name('contact');
 Route::post('/message/send', [MessageController::class, 'MessageDataSend'])->name('message.send');
-Route::get('/about', [HomepageController::class, 'about'])->name('about');
+Route::get('/about-us', [HomepageController::class, 'about'])->name('about');
 Route::get('/appointment', [HomepageController::class, 'appointment'])->name('appointment');
 // Route::post('/appointment/book', [MessageController::class, 'AppointmentDataSend'])->name('appointment.book');
-
-Route::get('/invoice', function () {
-    return view('welcome');
-    //$pdf = Pdf::loadView('front-end.index');
-    // return $pdf->download('invoice.pdf');
-});
 
 
 Route::get('/page', function () {
