@@ -200,6 +200,11 @@
             text-align: justify;
         }
 
+        #footer .footer-top .footer-contact h3 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         /* Adding animation to h2 and button */
         @keyframes fadeIn {
             0% {
