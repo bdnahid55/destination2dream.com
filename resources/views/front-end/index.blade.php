@@ -17,7 +17,7 @@
                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}"
                             style="background-image: url(/uploads/slider/{{ $slider->image }});">
                             <div class="carousel-container">
-                                <div class="carousel-content animate__animated animate__fadeInUp">
+                                <div class="text-center carousel-content animate__animated animate__fadeInUp">
                                     @if ($slider->title !== null)
                                         <h2>{{ $slider->title }}</h2>
                                     @endif
@@ -101,11 +101,11 @@
                                                 alt="{{ $service->name }}">
                                         </i>
                                     </div>
-                                    <h4>
+                                    <h3 style="color: yellowgreen !important">
                                         <a href="{{ URL::to('service') }}/{{ $service->slug }}/{{ $service->id }}">
                                             {{ $service->name }}
                                         </a>
-                                    </h4>
+                                    </h3>
                                     <p>{{ \Illuminate\Support\Str::limit($service->description, 175, '...') }}</p>
                                 </div>
                             </div>
