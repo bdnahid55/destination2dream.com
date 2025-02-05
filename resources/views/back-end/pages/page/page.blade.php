@@ -62,6 +62,7 @@
                                                 <option value="footer1">Useful Links</option>
                                                 <option value="footer2">Explore More</option>
                                                 <option value="menu">Top Menu</option>
+                                                <option value="middle_menu">In the Middle of the Menu </option>
                                             </select>
                                             @error('location')
                                                 <span class="text-danger">{{ $message }}</span>

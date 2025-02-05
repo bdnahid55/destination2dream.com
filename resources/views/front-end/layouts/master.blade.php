@@ -63,6 +63,14 @@
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Home</a></li>
                     <li><a href="{{ route('appointment') }}">Appointment</a></li>
+                    @php
+                        $CustomPageLists = App\Models\Page::where('location', 'middle_menu')->get();
+                    @endphp
+                    @foreach ($CustomPageLists as $CustomPage)
+                        <li><a
+                                href="{{ URL::to('/') }}/{{ $CustomPage->slug }}/{{ $CustomPage->id }}">{{ $CustomPage->title }}</a>
+                        </li>
+                    @endforeach
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('service') }}">Services</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>

@@ -52,7 +52,7 @@ class PageController extends Controller
             $request->validate(array(  // All column field will change
                 'title' => 'required|min:2',
                 'content' => 'required|min:2',
-                'location' => 'required|in:footer1,footer2,menu',
+                'location' => 'required|in:footer1,footer2,menu,middle_menu',
                 'meta_title' => 'required|min:1',
                 'meta_description' => 'required|min:1',
                 'meta_keywords' => 'required|min:1',
