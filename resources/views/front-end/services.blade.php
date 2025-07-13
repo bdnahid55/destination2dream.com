@@ -33,7 +33,8 @@
 
                     @if ($ServiceData->isNotEmpty())
                         @foreach ($ServiceData as $index => $service)
-                            <div class="mt-4 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="mt-4 col-lg-4 col-md-6" data-aos="zoom-in"
+                                data-aos-delay="100">
                                 <div class="icon-box iconbox-yellow">
                                     <div class="icon">
                                         <i>

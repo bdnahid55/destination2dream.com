@@ -56,7 +56,7 @@
                                 <div class="row">
                                     <!-- Date -->
                                     <div class="mb-3 col-md-6 col-12">
-                                        <label for="appointmentDate" class="form-label">Choose Date</label>
+                                        <label for="appointmentDate" class="form-label">Choose a date</label>
                                         <input type="date" class="form-control" id="appointmentDate" required>
                                     </div>
 

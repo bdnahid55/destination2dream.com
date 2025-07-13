@@ -17,7 +17,7 @@
                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}"
                             style="background-image: url(/uploads/slider/{{ $slider->image }});">
                             <div class="carousel-container">
-                                <div class="text-center carousel-content animate__animated animate__fadeInUp">
+                                <div class="carousel-content text-center animate__animated animate__fadeInUp">
                                     @if ($slider->title !== null)
                                         <h2>{{ $slider->title }}</h2>
                                     @endif
@@ -90,7 +90,8 @@
 
                     @if ($ServiceData->isNotEmpty())
                         @foreach ($ServiceData as $index => $service)
-                            <div class="mt-4 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="mt-4 col-lg-4 col-md-6" data-aos="zoom-in"
+                                data-aos-delay="100">
                                 <div class="icon-box iconbox-yellow">
                                     <div class="icon">
                                         <i>
