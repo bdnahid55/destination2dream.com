@@ -18,8 +18,7 @@ use App\Http\Controllers\WhyChooseMeController;
 use App\Http\Controllers\CallToActionController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\WebsiteSettingController;
-
-
+use App\Http\Controllers\PayPalPaymentController;
 
 /*
  admin section route
@@ -127,6 +126,14 @@ Route::get('/about-us', [HomepageController::class, 'about'])->name('about');
 Route::get('/appointment', [HomepageController::class, 'appointment'])->name('appointment');
 // Route::post('/appointment/book', [MessageController::class, 'AppointmentDataSend'])->name('appointment.book');
 
+
+
+
+// Route::get('/paypal/payment', [PayPalPaymentController::class, 'createTransaction'])->name('payment');
+Route::get('/pay', [PayPalPaymentController::class, 'createTransaction'])->name('payment');
+Route::post('/paypal/payment', [PayPalPaymentController::class, 'processTransaction'])->name('paypal.process');
+Route::get('/paypal/success', [PayPalPaymentController::class, 'successTransaction'])->name('paypal.success');
+Route::get('/paypal/cancel', [PayPalPaymentController::class, 'cancelTransaction'])->name('paypal.cancel');
 
 
 // --------------------------------------------------------------------------------
